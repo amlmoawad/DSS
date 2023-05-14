@@ -270,15 +270,16 @@ namespace DSS
                 }
                 eol = 0;
             }
-            double maxx = -99999999;
+
+            double min = 99999999;
             for (int i = 0; i < variablesCount; i++)
             {
                 double valu = Convert.ToDouble(dataGridView2.Rows[i].Cells[constraintsCount].Value);
-                if (valu > maxx)
+                if (valu < min)
                 {
-                    maxx = valu;
+                    min = valu;
                     int num = i + 1;
-                    label2.Text = "EOL chose project number " + num;
+                    label5.Text = "EOL chose project number " + num;
                 }
             }
         }
